@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- These are the options displayed in the gender drop-down Spinner -->
+    <string-array name="array_accounts">
+        <item>@string/wallet</item>
+        <item>@string/savings</item>
+    </string-array>
+
+    <string-array name="array_frequency_options">
+        <item>@string/every_day</item>
+        <item>@string/every_week</item>
+        <item>@string/every_two_weeks</item>
+        <item>@string/every_three_weeks</item>
+        <item>@string/every_month</item>
+        <item>@string/every_two_months</item>
+        <item>@string/every_three_months</item>
+        <item>@string/every_six_months</item>
+        <item>@string/every_year</item>
+    </string-array>
+    <string name="every_day">Every day</string>
+    <string name="every_week">Every week</string>
+    <string name="every_two_weeks">Every two weeks</string>
+    <string name="every_three_weeks">Every three weeks</string>
+    <string name="every_two_months">Every two months</string>
+    <string name="every_month">Every month</string>
+    <string name="every_three_months">Every three months</string>
+    <string name="every_four_months">Every four months</string>
+    <string name="every_five_months">Every five months</string>
+    <string name="every_six_months">Every six months</string>
+    <string name="every_year">Every year</string>
+</resources>

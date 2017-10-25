@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_margin"
+    tools:context=".ui.EditorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Amount -->
+            <LinearLayout
+                android:id="@+id/container_measurement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Icon android:icon="@drawable/ic_dashboard"  -->
+                <ImageView
+                    android:id="@+id/edit_icon_amount"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_monetization_on_black_24dp"/>
+
+                <!-- Input fields -->
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:paddingLeft="4dp">
+
+                    <EditText
+                        android:hint="@string/hint_amount"
+                        android:id="@+id/edit_amount"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:inputType="numberDecimal"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Spinner Accounts -->
+            <LinearLayout
+                android:id="@+id/container_transfer_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/edit_icon_type"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_compare_arrows_black_24dp"/>
+
+<!--android:paddingRight="16dp"-->
+                <Spinner
+                    android:id="@+id/spinner_transfer_from"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:spinnerMode="dropdown"/>
+
+                <Spinner
+                    android:id="@+id/spinner_transfer_to"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:spinnerMode="dropdown"/>
+            </LinearLayout>
+
+            <!-- Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Icon android:icon="@drawable/ic_dashboard"  -->
+                <ImageView
+                    android:id="@+id/edit_icon_date"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_event"/>
+
+                <!-- Input fields -->
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:paddingLeft="4dp">
+
+                    <EditText
+                        android:hint="@string/hint_enter_date"
+                        android:id="@+id/edit_date"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Title (extra text)-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Label / icon
+                removed: android:title="Home"
+                -->
+                <ImageView
+                    android:id="@+id/edit_icon_title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_border_color_black_24dp"/>
+
+                <!-- Input fields -->
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:paddingLeft="4dp">
+
+                    <!-- Name field -->
+                    <EditText
+                        android:id="@+id/edit_title"
+                        android:hint="Title"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:inputType="textCapWords"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Recurring check -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/recurring"/>
+
+                <CheckBox android:id="@+id/checkbox_recurring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:padding="8dp"
+                    />
+                <!--android:onClick="onCheckboxClicked" -->
+
+
+            </LinearLayout>
+
+            <!-- Recurring details -->
+            <LinearLayout
+                android:id="@+id/recurring_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Frequency Edit -->
+                <LinearLayout
+                    android:id="@+id/container_frequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Label/icon android:icon="@drawable/ic_dashboard"  -->
+                    <ImageView
+                        android:id="@+id/edit_recurring"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_update_black_24dp"/>
+
+                    <!-- Input field -->
+                    <RelativeLayout
+                        android:id="@+id/parent_recurring_checkmark"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:paddingLeft="16dp">
+
+                        <EditText
+                            android:hint="@string/hint_frequency"
+                            android:id="@+id/edit_frequency"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:gravity="right"
+                            android:padding="16dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:focusable="false"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!-- End Date -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Icon android:icon="@drawable/ic_dashboard"  -->
+                    <ImageView
+                        android:id="@+id/edit_icon_end_date"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_event_busy_black_24dp"/>
+
+                    <!-- Input fields -->
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:paddingLeft="4dp">
+
+                        <EditText
+                            android:hint="@string/hint_enter_end_date"
+                            android:id="@+id/edit_end_date"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:gravity="right"
+                            android:padding="16dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:focusable="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Save and Cancel Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <!--android:onClick="saveEditData" -->
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="SAVE"/>
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CANCEL"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
